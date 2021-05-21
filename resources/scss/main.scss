@@ -1,0 +1,21 @@
+// DataTables
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-buttons-bs4/css/buttons.bootstrap4.css";
+
+.dt-buttons {
+    margin-bottom: 1rem;
+}
+
+.custom-select {
+    width: 100% !important;
+}
+
+table.dataTable td, table.dataTable th {
+    padding: 0.72rem 1.5rem !important;
+    vertical-align: middle !important;
+}
+
+.filepond--root {
+    width: 190px !important;
+    margin: 0 auto;
+}
