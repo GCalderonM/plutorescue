@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class AnnounceRequest extends FormRequest
+class AnnounceStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +28,6 @@ class AnnounceRequest extends FormRequest
             'description' => 'required',
             'gender' => 'required',
             'type' => 'required',
-            'status' => 'required'
         ];
     }
 
@@ -39,7 +37,6 @@ class AnnounceRequest extends FormRequest
             'title' => __('global.title'),
             'description' => __('global.description'),
             'gender' => __('global.gender'),
-            'status' => __('global.status'),
             'type' => __('global.type')
         ];
     }

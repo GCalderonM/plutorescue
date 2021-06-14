@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\AnnouncesDataTable;
 use App\Http\Requests\AnnounceRequest;
+use App\Http\Requests\AnnounceStoreRequest;
 use App\Models\Announce;
 use App\Models\TemporaryFile;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -41,7 +42,7 @@ class AnnounceController extends Controller
         return view('project.announce.create-announce');
     }
 
-    public function store(AnnounceRequest $request) {
+    public function store(AnnounceStoreRequest $request) {
         DB::beginTransaction();
         try {
             $slug = SlugService::createSlug(Announce::class,

@@ -61,7 +61,7 @@ return [
     'gender' => 'Género',
     'male' => 'Macho',
     'female' => 'Hembra',
-    'image1' => 'Imagen 1 *',
+    'image1' => 'Imagen 1',
     'image2' => 'Imagen 2',
     'image3' => 'Imagen 3',
     'image4' => 'Imagen 4',
