@@ -28,7 +28,7 @@
                 <textarea placeholder="Indica tu duda..." class="px-3 py-3 placeholder-gray-500 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:border-blue-800 w-full resize-y max-h-20" required></textarea>
             </div>
             <div class="mb-5">
-                <input type="submit" value="Enviar" class="bg-gray-800 text-white font-bold text-sm px-6 py-3 shadow font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 text-white rounded-md cursor-pointer w-full" />
+                <input disabled type="submit" value="Enviar" class="bg-gray-800 text-white font-bold text-sm px-6 py-3 shadow font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150 text-white rounded-md cursor-pointer w-full" />
             </div>
         </form>
     </div>
