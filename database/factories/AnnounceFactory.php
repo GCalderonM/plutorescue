@@ -22,7 +22,7 @@ class AnnounceFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'Prueba de anuncio '.$this->faker->randomDigit(),
+            'title' => 'Prueba de anuncio '.$this->faker->unique()->randomDigit(),
             'description' => $this->faker->text,
             'status' => $this->faker->randomElement([1, 2, 3]),
             'gender' => $this->faker->randomElement([1, 2]),
