@@ -1,8 +1,12 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/usersDatatable.js": "/js/usersDatatable.js",
+    "/js/announcesDatatable.js": "/js/announcesDatatable.js",
+    "/js/accessLogsDatatable.js": "/js/accessLogsDatatable.js",
     "/js/donetyping.js": "/js/donetyping.js",
     "/js/filepond.js": "/js/filepond.js",
+    "/js/announceFilepond.js": "/js/announceFilepond.js",
     "/css/main.css": "/css/main.css",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/about-us.css": "/css/about-us.css"
 }

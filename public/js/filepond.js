@@ -3,7 +3,7 @@ var __webpack_exports__ = {};
 /*!*****************************************!*\
   !*** ./resources/assets/js/filepond.js ***!
   \*****************************************/
-FilePond.registerPlugin(FilePondPluginFileEncode, FilePondPluginFileValidateType, FilePondPluginImageExifOrientation, FilePondPluginImagePreview, FilePondPluginImageCrop, FilePondPluginImageResize, FilePondPluginImageTransform, FilePondPluginFilePoster);
+FilePond.registerPlugin(FilePondPluginFileEncode, FilePondPluginFileValidateType, FilePondPluginImageExifOrientation, FilePondPluginImagePreview, FilePondPluginImageCrop, FilePondPluginImageResize, FilePondPluginImageTransform, FilePondPluginFilePoster); // USER PROFILE IMAGE
 
 if (user_img !== 'undefined') {
   FilePond.create(document.querySelector('input[id="avatar"]'), {
