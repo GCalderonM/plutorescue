@@ -21,6 +21,7 @@ class CreateAnnouncesTable extends Migration
             $table->integer('status')->default(1);
             $table->integer('gender')->nullable();
             $table->integer('type')->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
             $table->softDeletes();
 

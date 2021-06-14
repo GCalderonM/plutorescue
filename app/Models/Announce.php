@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,7 +13,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class Announce extends Model implements Auditable, HasMedia
 {
-    use HasFactory, SoftDeletes, HasMediaTrait, \OwenIt\Auditing\Auditable;
+    use HasFactory, SoftDeletes, HasMediaTrait, \OwenIt\Auditing\Auditable, Sluggable;
 
     protected $fillable = [
         'user_id',
@@ -20,7 +21,8 @@ class Announce extends Model implements Auditable, HasMedia
         'description',
         'status',
         'gender',
-        'type'
+        'type',
+        'slug'
     ];
 
     public function getCreatedAtAttribute($value)
@@ -46,5 +48,19 @@ class Announce extends Model implements Auditable, HasMedia
             ->singleFile()
             ->useDisk('announce_images')
             ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/jpg']);
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
     }
 }

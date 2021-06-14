@@ -52,7 +52,7 @@
                                 </div>
                                 <div class="flex p-4 pb-2 border-t border-gray-200 "></div>
                                 <div class="flex space-x-3 text-sm font-medium">
-                                    <a href="{{ route('viewAnnounce', Str::slug($announce->title, '-')) }}"
+                                    <a href="{{ route('viewAnnounce', $announce->slug) }}"
                                        class="mb-2 md:mb-0 bg-gray-900 px-5 py-2 shadow-sm tracking-wider text-white rounded-full hover:bg-gray-800">
                                         {{ __('Ver detalles') }}
                                     </a>

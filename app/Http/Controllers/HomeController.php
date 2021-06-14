@@ -68,10 +68,9 @@ class HomeController extends Controller
         }
     }
 
-    public function viewAnnounce($announceTitle)
+    public function viewAnnounce($slug)
     {
-        $title = Str::title(str_replace('-', ' ', $announceTitle));
-        $announce = Announce::where('title', $title)->first();
+        $announce = Announce::where('slug', $slug)->first();
 
         return view('site.announce-details', compact('announce'));
     }
