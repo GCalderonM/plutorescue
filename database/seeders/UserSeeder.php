@@ -40,14 +40,11 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('GuillermoAdmin2808@'),
             'remember_token' => Str::random(10),
+            'community_id' => 1,
+            'province_id' => 8
         ]);
 
         // Asignamos el rol Admin a dicho usuario
         $administrador->assignRole($admin);
-
-        // Usuarios fake
-        User::factory(5)->create()->each(function ($user) {
-            $user->assignRole('usuario');
-        });
     }
 }
