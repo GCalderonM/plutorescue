@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class AnnounceRequest extends FormRequest
 {
@@ -24,10 +25,21 @@ class AnnounceRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique',
+            'title' => 'required',
             'description' => 'required',
             'gender' => 'required',
             'type' => 'required',
+            'slug'=> 'required'
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'title' => __('global.title'),
+            'description' => __('global.description'),
+            'gender' => __('global.gender'),
+            'type' => __('global.type')
         ];
     }
 }

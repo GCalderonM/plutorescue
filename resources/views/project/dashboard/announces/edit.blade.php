@@ -12,16 +12,16 @@
 
 @section('content')
     <div class="container w-full">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="card w-full">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
             <div class="card-header w-full text-info font-weight-bold text-lg">
                 {{__('Edit '.$announce->title.' announce')}}
             </div>
@@ -33,6 +33,8 @@
                     <div class="row">
                         <input class="form-control" id="username" name="username"
                                type="hidden" value="{{ $announce->user->username }}" />
+                        <input class="form-control" id="slug" name="slug"
+                               type="hidden" value="{{ $announce->slug }}" />
                         <div class="form-group col-12 col-md-3">
                             <label for="title">{{__('global.title')}}</label>
                             <input required class="form-control" id="title" name="title"

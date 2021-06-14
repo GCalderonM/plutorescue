@@ -39,6 +39,23 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-sm-6 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-muted text-right mb-4">
+                            <svg class="c-icon c-icon-2xl">
+                                <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-contact') }}"></use>
+                            </svg>
+                        </div>
+                        <div class="text-value-lg">
+                            {{ $accessLogs }}
+                        </div>
+                        <small class="text-muted text-uppercase font-weight-bold">
+                            {{ __('global.accessLog') }}
+                        </small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

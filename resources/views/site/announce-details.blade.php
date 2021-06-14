@@ -3,7 +3,7 @@
 @section('title', __('global.announces'))
 
 @section('content')
-    <div class="bg-gray-200 text-black h-full">
+    <div class="bg-gray-200 text-black h-auto md:h-screen">
         <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-16 mx-auto text-gray-800 relative md:text-left">
             <div class="flex">
                 <a href="{{ url()->previous() }}">

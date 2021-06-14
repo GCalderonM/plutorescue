@@ -1,5 +1,5 @@
 <header>
-    <nav class="flex flex-wrap items-center md:justify-between p-2 bg-gray-200 px-16 py-2">
+    <nav class="flex flex-wrap items-center md:justify-between p-2 bg-gray-200 px-10 md:px-16 py-2">
         <div class="flex md:hidden p-2">
             <button id="hamburger">
                 <svg class="text-black toggle block" xmlns="http://www.w3.org/2000/svg" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -10,7 +10,7 @@
                 </svg>
             </button>
         </div>
-        <a href="{{url('/')}}" class="flex font-extrabold text-2xl text-black mx-auto md:mx-0">
+        <a href="{{ route('home') }}" class="flex font-extrabold text-2xl text-black mx-auto md:mx-0">
             <span>pluto<span class="text-yellow-500">rescue</span></span>
         </a>
         @auth
@@ -33,7 +33,7 @@
                 </svg>
             </a>
         @endguest
-            <div class="toggle hidden md:flex w-full md:w-auto text-left text-black font-bold mt-5 md:mt-0">
+        <div class="toggle hidden md:flex w-full md:w-auto text-left text-black font-bold mt-5 md:mt-0">
             <a href="{{ route('home') }}" class="block text-center md:inline-block hover:text-yellow-500 px-3 py-3">Inicio</a>
             <a href="{{ route('about-us') }}" class="block text-center md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Nosotros</a>
             <a href="#contactForm" class="block text-center md:inline-block hover:text-yellow-500 px-3 py-3 md:border-none">Contacto</a>

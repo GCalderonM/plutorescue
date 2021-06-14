@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataTables\AnnouncesDataTable;
 use App\DataTables\UsersDataTable;
 use App\Http\Requests\SearchRequest;
+use App\Models\AccessLog;
 use App\Models\Announce;
 use App\Models\Community;
 use App\Models\Province;
@@ -26,8 +27,10 @@ class HomeController extends Controller
     {
         $users = User::all()->count();
         $announces = Announce::all()->count();
+        $accessLogs = AccessLog::all()->count();
 
-        return view('project.dashboard.index', compact('users', 'announces'));
+        return view('project.dashboard.index', compact('users',
+            'announces', 'accessLogs'));
     }
 
     public function about() : \Illuminate\View\View

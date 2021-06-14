@@ -6,6 +6,7 @@ use App\DataTables\AnnouncesDataTable;
 use App\Http\Requests\AnnounceRequest;
 use App\Models\Announce;
 use App\Models\TemporaryFile;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -44,6 +45,10 @@ class AnnounceController extends Controller
         DB::beginTransaction();
         try {
             $newAnnounce = Announce::create($request->toArray());
+
+            if (Announce::where('title', $newAnnounce->title)->first()->count() > 0) {
+                $newAnnounce->slug->replicate();
+            }
 
             // Temp variables
             $temporaryFile2 = null;
@@ -134,6 +139,11 @@ class AnnounceController extends Controller
         try {
             $announce->fill($request->validated())->update();
             $announce->updated_at = now();
+
+            $slug = SlugService::createSlug(Announce::class,
+                'slug', $request->title);
+            $announce->slug = $slug;
+            $announce->update();
 
             // Temp variables
             $temporaryFile2 = null;

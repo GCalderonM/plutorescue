@@ -9,7 +9,7 @@
                 <h1 class="text-3xl xl:text-6xl font-bold">ADOPTA TU MASCOTA FAVORITA!</h1>
                 <p class="md:text-2xl text-base">Dale la vida necesaria a tu nuevo miembro de la familia. No compres, adopta!</p>
             </div>
-            <div class="flex flex-wrap justify-center xl:w-1/3 py-4 xl:py-0">
+            <div class="hidden md:flex flex-wrap justify-center xl:w-1/3 py-4 xl:py-0">
                 <div class="w-6/12 md:w-6/12 lg:w-1/2 xl:w-2/3 px-4">
                     <img src="{{ asset('images/dog.jpg') }}" alt="dog image"
                          class="shadow-2xl rounded-full max-w-full h-auto align-middle border-none"/>

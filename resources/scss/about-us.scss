@@ -3,3 +3,11 @@
     height: 200px;
     object-fit: cover;
 }
+
+@media (max-width: 768px) {
+    .developerImg {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+}
