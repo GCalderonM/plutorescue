@@ -30,6 +30,7 @@
                     @csrf
                     <div class="row">
                         <input name="user_id" value="{{ auth()->user()->id }}" type="hidden" />
+                        <input name="slug" value="" type="hidden" />
                         <div class="form-group col-12 col-md-3">
                             <label for="title">{{__('global.title')}}</label>
                             <input required class="form-control" id="title" name="title"

@@ -44,11 +44,11 @@ class AnnounceController extends Controller
     public function store(AnnounceRequest $request) {
         DB::beginTransaction();
         try {
-            $newAnnounce = Announce::create($request->toArray());
+            $slug = SlugService::createSlug(Announce::class,
+                'slug', $request->title);
+            $request->slug = $slug;
 
-            if (Announce::where('title', $newAnnounce->title)->first()->count() > 0) {
-                $newAnnounce->slug->replicate();
-            }
+            $newAnnounce = Announce::create($request->toArray());
 
             // Temp variables
             $temporaryFile2 = null;
