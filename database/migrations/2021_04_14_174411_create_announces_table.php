@@ -16,10 +16,11 @@ class CreateAnnouncesTable extends Migration
         Schema::create('announces', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->string('title');
+            $table->string('title')->unique();
             $table->text('description')->nullable();
-            $table->string('status');
-            $table->string('gender')->nullable();
+            $table->integer('status')->default(1);
+            $table->integer('gender')->nullable();
+            $table->integer('type')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

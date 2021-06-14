@@ -17,6 +17,20 @@
                     </a>
                 </p>
             </div>
+            @if ($errors->any())
+                <div role="alert">
+                    <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                        Auth fail!
+                    </div>
+                    <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endif
             <form class="mt-8 space-y-6" action="{{route('login')}}" method="POST">
                 @csrf
                 <input type="hidden" name="remember" value="true">
@@ -43,12 +57,6 @@
                         <label for="remember_me" class="ml-2 block text-sm text-gray-900">
                             {{__('global.remember_me')}}
                         </label>
-                    </div>
-
-                    <div class="text-sm">
-                        <a href="{{url('forgot-password')}}" class="font-medium text-indigo-600 hover:text-indigo-500">
-                            {{__('global.forgot_password')}}
-                        </a>
                     </div>
                 </div>
 

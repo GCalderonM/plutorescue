@@ -9,6 +9,8 @@ FilePond.registerPlugin(
     FilePondPluginFilePoster
 );
 
+// USER PROFILE IMAGE
+
 if (user_img !== 'undefined') {
     FilePond.create(
         document.querySelector('input[id="avatar"]'),

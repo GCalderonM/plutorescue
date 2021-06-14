@@ -12,6 +12,15 @@
 
 @section('content')
     <div class="container w-full">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="card w-full">
             <div class="card-header w-full text-info font-weight-bold text-lg">
                 {{__('Edit '.$user->username.' information')}}
@@ -46,7 +55,7 @@
                             <input required class="form-control" id="surname" name="surname" type="text" value="{{ $user->surname }}">
                         </div>
                     </div>
-                    @livewire('community-province', ['selectedCommunity' => $user->province])
+                    @livewire('community-province', ['selectedCommunity' => $user->province_id])
                     <div class="row">
                         <div class="form-group col-12 col-md-6">
                             <label for="cp">{{__('global.cp')}}</label>

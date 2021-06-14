@@ -29,8 +29,8 @@ class User extends Authenticatable implements Auditable, HasMedia
         'surname',
         'email',
         'password',
-        'community',
-        'province',
+        'community_id',
+        'province_id',
         'cp',
         'tlfNumber'
     ];
@@ -68,9 +68,9 @@ class User extends Authenticatable implements Auditable, HasMedia
 
     /**
      * Relacion One to Many con Announces
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function announces() {
+    public function announces(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(Announce::class);
     }
 

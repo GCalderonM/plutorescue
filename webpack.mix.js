@@ -17,9 +17,13 @@ mix.js('resources/js/app.js', 'public/js')
         require("tailwindcss"),
     ])
     .sass('resources/scss/main.scss', 'public/css')
+    .sass('resources/scss/about-us.scss', 'public/css')
     .js('resources/assets/js/usersDatatable.js', 'public/js')
+    .js('resources/assets/js/announcesDatatable.js', 'public/js')
+    .js('resources/assets/js/accessLogsDatatable.js', 'public/js')
     .js('resources/assets/js/donetyping.js', 'public/js')
-    .js('resources/assets/js/filepond.js', 'public/js');
+    .js('resources/assets/js/filepond.js', 'public/js')
+    .js('resources/assets/js/announceFilepond.js', 'public/js');
 
 mix.webpackConfig({
     plugins: [

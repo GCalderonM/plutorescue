@@ -22,7 +22,6 @@ class UserController extends Controller
 
     public function edit(User $user): View
     {
-
         if ($user->getMedia('avatar')->first()) {
             JavaScript::put([
                 'user' => $user,
@@ -44,6 +43,7 @@ class UserController extends Controller
         try {
             // Actualizamos el usuario con los nuevos datos
             $user->fill($request->validated())->update();
+            $user->updated_at = now();
 
             // Obtenemos el fichero temporal que se ha creado al subir la imagen
             $temporaryFile = TemporaryFile::where('folder', $request->avatar)->first();

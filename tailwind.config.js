@@ -1,4 +1,5 @@
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   purge: [
@@ -845,5 +846,6 @@ module.exports = {
   },
   plugins: [
       require('@tailwindcss/forms'),
+      require('tailwindcss-plugins/pagination'),
   ],
 }

@@ -11,7 +11,11 @@ class Province extends Model
 
     protected $fillable = ['name', 'community_id'];
 
-    public function community() {
+    /**
+     * Relacion One to Many con Community
+     */
+    public function community(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
         return $this->belongsTo(Community::class);
     }
 }

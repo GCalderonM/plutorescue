@@ -28,10 +28,24 @@ class UpdateUserRequest extends FormRequest
             'email' => 'required|email',
             'name' => 'required',
             'surname' => 'required',
-            'community' => 'required|not_in:0',
-            'province' => 'required|not_in:0',
-            'cp' => 'required|max:5',
-            'tlfNumber' => 'required|max:9',
+            'community_id' => 'required',
+            'province_id' => 'required',
+            'cp' => 'required|min:5|max:5',
+            'tlfNumber' => 'required|min:9|max:9',
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'username' => __('global.username'),
+            'email' => __('global.email'),
+            'name' => __('global.name'),
+            'surname' => __('global.surname'),
+            'community_id' => __('global.community'),
+            'province_id' => __('global.province'),
+            'cp' => __('global.cp'),
+            'tlfNumber' => __('global.tlfNumber')
         ];
     }
 }

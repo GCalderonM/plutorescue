@@ -1,8 +1,8 @@
-<footer class="bg-gray-300 p-4 px-16 text-white block sm:flex sm:items-center sm:justify-center absolute w-full">
+<footer id="contactForm" class="bg-gray-300 p-4 px-16 text-white block sm:flex sm:items-center sm:justify-center absolute w-full">
     <div class="w-full xs:text-center sm:w-1/2 text-black">
         <img src="{{asset('images/brand_logo.svg')}}" width="60px" class="xs:inline" />
-        <p>pet<span class="text-yellow-500">rescue</span> - Copyright 2020</p>
-        <p>Made with ❤ by <span>pet<span class="text-yellow-500">rescue's</span> team!</span>
+        <p>pluto<span class="text-yellow-500">rescue</span> - Copyright 2021</p>
+        <p>Made with ❤ by <span>pluto<span class="text-yellow-500">rescue's</span> team!</span>
     </div>
     <div class="w-full pt-5 sm:w-1/2 sm:pt-0 text-black">
         <p class="mb-1">¿Necesita contactar con nosotros?</p>

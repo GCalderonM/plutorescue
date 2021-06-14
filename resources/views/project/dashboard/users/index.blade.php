@@ -11,7 +11,7 @@
         <div class="card w-full">
             @include('project.dashboard.users.usersFilters')
             <div class="card-body w-full">
-                <div class="table-responsive">
+                <div class="table-responsive table-hover">
                     {{$dataTable->table()}}
                 </div>
             </div>

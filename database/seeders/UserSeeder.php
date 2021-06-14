@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Community;
+use App\Models\Province;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -31,12 +33,12 @@ class UserSeeder extends Seeder
 
         // Cuenta administrador
         $administrador = User::create([
-            'username' => 'GalletaCM',
-            'name' => 'Guillermo',
-            'surname' => 'Calderón Musi',
-            'email' => 'guille.galileo@gmail.com',
+            'username' => 'admin',
+            'name' => 'admin',
+            'surname' => 'admin',
+            'email' => 'admin@admin.com',
             'email_verified_at' => now(),
-            'password' => Hash::make('Guillermo2000@'),
+            'password' => Hash::make('GuillermoAdmin2808@'),
             'remember_token' => Str::random(10),
         ]);
 
@@ -44,7 +46,7 @@ class UserSeeder extends Seeder
         $administrador->assignRole($admin);
 
         // Usuarios fake
-        User::factory(20)->create()->each(function ($user) {
+        User::factory(5)->create()->each(function ($user) {
             $user->assignRole('usuario');
         });
     }

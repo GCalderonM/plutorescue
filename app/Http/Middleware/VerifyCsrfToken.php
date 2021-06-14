@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        '/search',
+        '/search*',
+        'http://plutorescue.test/search',
+        'http://plutorescue.test/search*',
     ];
 }

@@ -13,7 +13,7 @@
         <li class="c-sidebar-nav-item">
             <a class="c-sidebar-nav-link" href="{{route('dashboard.index')}}">
                 <svg class="c-sidebar-nav-icon">
-                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-speedometer') }}"></use>
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-home') }}"></use>
                 </svg>
                 Dashboard
             </a>
@@ -27,11 +27,19 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="{{ route('dashboard.announces') }}">
+            <a class="c-sidebar-nav-link" href="{{ route('announces.index') }}">
                 <svg class="c-sidebar-nav-icon">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-clipboard') }}"></use>
                 </svg>
                 {{__('global.announces')}}
+            </a>
+        </li>
+        <li class="c-sidebar-nav-item">
+            <a class="c-sidebar-nav-link" href="{{ route('accessLog.index') }}">
+                <svg class="c-sidebar-nav-icon">
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-contact') }}"></use>
+                </svg>
+                {{__('global.accessLog')}}
             </a>
         </li>
         @endrole
@@ -46,7 +54,7 @@
         </li>
         @role('Usuario')
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link" href="{{ route('announce.index') }}">
+            <a class="c-sidebar-nav-link" href="{{ route('my-announces.index') }}">
                 <svg class="c-sidebar-nav-icon">
                     <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-clipboard') }}"></use>
                 </svg>

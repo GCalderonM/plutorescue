@@ -11,14 +11,15 @@
             </div>
             <div class="flex flex-wrap justify-center xl:w-1/3 py-4 xl:py-0">
                 <div class="w-6/12 md:w-6/12 lg:w-1/2 xl:w-2/3 px-4">
-                    <img src="{{asset('images/dog.jpg')}}" alt="dog image"
+                    <img src="{{ asset('images/dog.jpg') }}" alt="dog image"
                          class="shadow-2xl rounded-full max-w-full h-auto align-middle border-none"/>
                 </div>
             </div>
         </div>
         <div class="flex flex-wrap justify-center py-4 px-6 flex-grow">
-            <form method="POST" class="w-full sm:w-4/5 xl:flex">
-                @csrf
+            <form method="GET" class="w-full sm:w-4/5 xl:flex"
+                  action="{{ route('search') }}">
+
                 <div class="relative flex w-full flex-wrap items-stretch mb-6 xl:w-1/2 xl:mr-5">
                      <span
                          class="z-10 leading-snug font-normal absolute text-center text-black absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
@@ -29,15 +30,19 @@
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                         </svg>
                      </span>
+                    <label for="localization" class="sr-only"></label>
                     <input type="text" placeholder="Indica tu localización..."
+                           id="localization"
+                           name="localization"
                            class="px-3 py-3 placeholder-gray-500 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:border-blue-800 w-full pl-10" required/>
                 </div>
                 <div class="relative flex w-full flex-wrap items-stretch mb-6 xl:w-1/3 xl:mr-5">
+                    <label for="gender" class="sr-only"></label>
                     <select id="gender" name="gender" autocomplete="gender"
                             class="appearance-none px-3 py-3 placeholder-gray-500 text-gray-700 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:border-blue-800 w-full">
                         <option selected disabled>Sexo</option>
-                        <option value="M">Macho</option>
-                        <option value="H">Hembra</option>
+                        <option value="1">Macho</option>
+                        <option value="2">Hembra</option>
                     </select>
                 </div>
                 <div class="relative flex w-full flex-wrap items-stretch mb-6 xl:w-1/4">
