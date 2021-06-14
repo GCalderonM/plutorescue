@@ -28,7 +28,8 @@ class AnnounceRequest extends FormRequest
             'title' => 'required',
             'description' => 'required',
             'gender' => 'required',
-            'type' => 'required'
+            'type' => 'required',
+            'status' => 'required'
         ];
     }
 
