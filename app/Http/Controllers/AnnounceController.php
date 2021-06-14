@@ -23,7 +23,7 @@ class AnnounceController extends Controller
 
     public function myAnnounces()
     {
-        if (is_null(auth()->user()->community) || is_null(auth()->user()->province)
+        if (is_null(auth()->user()->community_id) || is_null(auth()->user()->province_id)
             || is_null(auth()->user()->cp) || is_null(auth()->user()->tlfNumber)) {
             toastr()->error('Debes completar tu perfil con los datos requeridos!');
             return redirect()->route('profile.index');
