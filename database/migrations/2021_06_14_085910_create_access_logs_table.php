@@ -19,7 +19,7 @@ class CreateAccessLogsTable extends Migration
             $table->text("email");
             $table->longText("user_agent");
             $table->longText("content");
-            $table->boolean("access");
+            $table->tinyInteger("access")->default(0);
 
             $table->timestamps();
         });
