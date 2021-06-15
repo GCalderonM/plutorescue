@@ -2,6 +2,10 @@
 
 @section('title', __('global.announces'))
 
+@section('page_styles')
+    <link rel="stylesheet" href="{{ asset('css/announce-styles.css') }}">
+@endsection
+
 @section('content')
     <div class="bg-gray-200 text-black h-auto md:h-screen">
         <div class="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-16 mx-auto text-gray-800 relative md:text-left">
@@ -16,16 +20,19 @@
                         <img src="{{ $announce->getMedia('announces_images')->count() > 0 ?
                                 $announce->getMedia('announces_images')->first()->getUrl() :
                                 asset('images/noImage.png') }}"
-                             class="w-full relative z-10" alt="{{ $announce->title }}" id="coverImage">
+                             class="relative z-10"
+                             alt="{{ $announce->title }}"
+                             id="coverImage">
                     </div>
                     @if ($announce->getMedia('announces_images')->count() > 1)
                         <div class="flex pt-5">
                             @foreach($announce->getMedia('announces_images') as $image)
                                 <div class="border border-indigo-300 mr-3">
-                                    <img src="{{$image->getUrl()}}"
+                                    <img src="{{ $image->getUrl() }}"
                                          onclick="displayImage('{{ 'image_'.$image->name }}')"
                                          width="100px" alt="{{ $announce->title }}"
-                                         id="{{ 'image_'.$image->name }}">
+                                         id="{{ 'image_'.$image->name }}"
+                                         class="imagesAnnounce">
                                 </div>
                             @endforeach
                         </div>
