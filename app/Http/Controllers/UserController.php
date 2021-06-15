@@ -76,15 +76,15 @@ class UserController extends Controller
         }
     }
 
-    public function destroy(User $user): RedirectResponse
+    public function destroy($user): RedirectResponse
     {
         DB::beginTransaction();
         try {
-            if ($user->deleted_at != null) { // El usuario ya está borrado, lo borramos completamente
-                $user->forceDelete();
+            if (User::withTrashed()->findOrFail($user)->deleted_at != null) {
+                User::onlyTrashed()->findOrFail($user)->forceDelete();
             }
 
-            $user->delete();
+            User::where('id', $user)->delete();
             DB::commit();
             toastr()->success(__('global.delete-success'));
             return redirect()->route('users.index');

@@ -233,15 +233,15 @@ class AnnounceController extends Controller
         }
     }
 
-    public function destroy(Announce $announce): RedirectResponse
+    public function destroy($announce): RedirectResponse
     {
         DB::beginTransaction();
         try {
-            if ($announce->deleted_at != null) {
-                $announce->forceDelete();
+            if (Announce::withTrashed()->findOrFail($announce)->deleted_at != null) {
+                Announce::onlyTrashed()->findOrFail($announce)->forceDelete();
             }
 
-            $announce->delete();
+            Announce::where('id', $announce)->delete();
             DB::commit();
             toastr()->success(__('global.delete-success'));
             return redirect()->route('announces.index');
