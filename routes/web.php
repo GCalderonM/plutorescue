@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
             ->middleware('role:Admin');
 
         /* Rutas para usuarios */
-        Route::post('users/{user}/restore', [UserController::class, 'restore'])
+        Route::get('users/{user}/restore', [UserController::class, 'restore'])
             ->middleware('role:Admin')->name('users.restore');
         Route::put('users/{user}', [UserController::class, 'update'])
             ->middleware('role:Admin|Usuario')->name('users.update');
@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
             ->middleware('role:Admin');
 
         /* Rutas para anuncios */
-        Route::post('announces/{announce}/restore', [AnnounceController::class, 'restore'])
+        Route::get('announces/{announce}/restore', [AnnounceController::class, 'restore'])
             ->middleware('role:Admin')->name('announces.restore');
         Route::put('announces/{announce}', [AnnounceController::class, 'update'])
             ->middleware('role:Admin|Usuario')->name('announces.update');

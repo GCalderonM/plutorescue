@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Announce;
 use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -50,6 +51,10 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::bind('users', function ($id) {
                 return User::withTrashed()->findOrFail($id);
+            });
+
+            Route::bind('announces', function ($id) {
+                return Announce::withTrashed()->findOrFail($id);
             });
         });
     }

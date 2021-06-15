@@ -252,11 +252,11 @@ class AnnounceController extends Controller
         }
     }
 
-    public function restore($announceId)
+    public function restore($announce): RedirectResponse
     {
         DB::beginTransaction();
         try {
-            Announce::onlyTrashed()->findOrFail($announceId)->restore();
+            Announce::onlyTrashed()->findOrFail($announce)->restore();
             toastr()->success(__('global.restore-success'));
             DB::commit();
             return redirect()->route('announces.index');
