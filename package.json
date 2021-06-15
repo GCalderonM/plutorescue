@@ -6,7 +6,6 @@
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js && php artisan build:email",
         "postinstall": "npm run production"
     },
     "devDependencies": {
