@@ -16,7 +16,7 @@ class CreateAccessLogsTable extends Migration
         Schema::create('access_logs', function (Blueprint $table) {
             $table->id();
             $table->text("ip");
-            $table->text("email");
+            $table->text("email")->nullable();
             $table->longText("user_agent");
             $table->longText("content");
             $table->tinyInteger("access")->default(0);
