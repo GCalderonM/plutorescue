@@ -4,3 +4,12 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .developerImg {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
